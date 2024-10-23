@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="parent">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h1>Login</h1>
+            <label for="Email">Email:</label>
+            <input type="email" placeholder="abc@gmail.com"
+                formControlName="email" autocomplete="email">
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                    <p class="err" *ngIf="loginForm.get('email')?.errors?.['required']">Email Is Required</p>
+                </div>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter password"
+                formControlName="password" autocomplete="current-password">
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                    <p class="err" *ngIf="loginForm.get('password')?.errors?.['required']">Password Is required</p>
+                </div>
+            <br>
+            <a routerLink="/forgot-password">Forgot Password?</a>
+            <br>
+            <button type="submit" [disabled]="loginForm.invalid">Login</button>
+            <br>
+            <h5>New User?
+                <a routerLink="/register">Register</a></h5>
+           
+        </form>
+    </div>
+
+</div>

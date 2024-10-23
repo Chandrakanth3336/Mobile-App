@@ -1,0 +1,39 @@
+{
+  "login": [
+    {
+      "id": "c6d5",
+      "email": "getpasswordByEmail@gmail.com",
+      "password": "getpasswordByEmail"
+    },
+    {
+      "id": "cbe9",
+      "email": "chandrakanthreddie@gmail.com",
+      "password": "Chandhu@123"
+    },
+    {
+      "id": "1162",
+      "email": "srikanth22@gmail.com",
+      "password": "Sri@345"
+    }
+  ],
+  "register": [
+    {
+      "id": "bc56",
+      "name": "getpasswordByEmail",
+      "email": "getpasswordByEmail@gmail.com",
+      "password": "getpasswordByEmail@gmail.com@456789"
+    },
+    {
+      "id": "fa09",
+      "name": "Chandrakanth Reddy",
+      "email": "chandrakanthreddie@gmail.com",
+      "password": "Rajamuri@0987654"
+    },
+    {
+      "id": "936a",
+      "name": "Srikanth",
+      "email": "srikanth22@gmail.com",
+      "password": "1234567890"
+    }
+  ]
+}

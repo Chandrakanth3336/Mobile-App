@@ -1,0 +1,160 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Hide all scrollbars */
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Apply box-sizing globally */
+}
+
+.parent {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden; /* Ensure no scrollbars appear */
+}
+
+.child {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px; /* Restrict maximum width */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.left {
+    width: 30%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    height: 100%; /* Full height for left section */
+    overflow: hidden; /* Prevent internal scroll */
+}
+
+.left h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.left hr {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left ul li {
+    margin: 10px 0;
+}
+
+.left ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.left ul li a:hover {
+    text-decoration: underline;
+}
+
+.left button {
+    padding: 10px 20px;
+    margin-top: auto;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.left button:hover {
+    background-color: #c82333;
+}
+
+.right {
+    width: 70%;
+    background-color: #f9f9f9;
+    padding: 30px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInRight 1.5s forwards;
+    overflow: hidden; /* Prevent internal scroll */
+    height: 100%; /* Full height for right section */
+}
+
+/* Ensure images do not overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .child {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: auto; /* Stack left and right sections vertically on mobile */
+    }
+}
